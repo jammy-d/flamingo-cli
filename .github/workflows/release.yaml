@@ -57,7 +57,7 @@ jobs:
 
       - name: Push to GitHub Container Registry
         id: push-to-ghcr
-        if: github.ref == 'refs/heads/main'
+#        if: github.ref == 'refs/heads/main'
         uses: redhat-actions/push-to-registry@v2
         with:
           image: ${{ steps.build-image.outputs.image }}
@@ -68,4 +68,4 @@ jobs:
 
       - name: Print image url
         run: echo "Image pushed to ${{ steps.push-to-ghcr.outputs.registry-paths }}"
-        if: github.ref == 'refs/heads/main'
+#        if: github.ref == 'refs/heads/main'
